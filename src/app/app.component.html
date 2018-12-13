@@ -1,44 +1,20 @@
-
-<div class="p-grid">
-<div class="p-col-12">
-    <p-dropdown [options]="docs" [(ngModel)]="selectedDoc"
-                optionLabel="name" [style]="{'width': '100%'}" (onChange)="changeTipoDocumento(selectedDoc)"></p-dropdown>
-    <!--<p>Documento seleccionado: {{selectedDoc ? selectedDoc.name : 'Ninguno'}}</p>-->
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-</div>
-<div class="p-grid" [formGroup]="DTEForm">
-  <div class="p-col-12">
-    <div class="ui-inputgroup">
-      <span class="ui-inputgroup-addon" style="width: 170px">Folio documento</span>
-      <input type="number" pInputText placeholder="Solo numeros" style="width: 100%" formControlName="Folio">
-    </div>
-  </div>
-  <div class="p-col-12">
-    <div class="ui-inputgroup">
-      <span class="ui-inputgroup-addon" style="width: 170px">Rut empresa</span>
-      <input type="text" pInputText placeholder="Sin puntos" maxlength="11"
-             style="width: 100%" formControlName="RutEmpresa">
-    </div>
-  </div>
-  <div class="p-col-12">
-    <div class="ui-inputgroup">
-      <span class="ui-inputgroup-addon" style="width: 170px">Monto documento</span>
-      <input type="number" pInputText placeholder="Solo numeros" style="width: 100%" formControlName="Monto">
-    </div>
-  </div>
-  <div class="p-col-12">
-    <div class="ui-inputgroup">
-      <span class="ui-inputgroup-addon" style="width: 150px">Fecha documento </span>
-      <p-calendar [(ngModel)]="date2" [locale]="es" dateFormat="dd-mm-yy" [ngModelOptions]="{standalone: true}"></p-calendar>
-    </div>
-  </div>
-  <div class="p-col-12">
-    <p-button label="Visualizar Documento" (onClick)="solicitarPDF()"></p-button>
-  </div>
-</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
 
-<pdf-viewer [src]="pdfSrc"
-            [render-text]="true"
-            style="display: block;">
-
-</pdf-viewer>
