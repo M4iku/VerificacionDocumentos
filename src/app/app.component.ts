@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
   changeTipoDocumento(value: DTE) {
       this.DTEForm.controls['TipoDocumento'].setValue(value.code);
       console.log('test');
+      console.log('test');
   }
 
 }
