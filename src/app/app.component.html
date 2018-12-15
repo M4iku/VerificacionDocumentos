@@ -1,0 +1,44 @@
+
+<div class="p-grid">
+<div class="p-col-12">
+    <p-dropdown [options]="docs" [(ngModel)]="selectedDoc"
+                optionLabel="name" [style]="{'width': '100%'}" (onChange)="changeTipoDocumento(selectedDoc)"></p-dropdown>
+    <!--<p>Documento seleccionado: {{selectedDoc ? selectedDoc.name : 'Ninguno'}}</p>-->
+</div>
+</div>
+<div class="p-grid" [formGroup]="DTEForm">
+  <div class="p-col-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon" style="width: 170px">Folio documento</span>
+      <input type="number" pInputText placeholder="Solo numeros" style="width: 100%" formControlName="Folio">
+    </div>
+  </div>
+  <div class="p-col-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon" style="width: 170px">Rut empresa</span>
+      <input type="text" pInputText placeholder="Sin puntos" maxlength="11"
+             style="width: 100%" formControlName="RutEmpresa">
+    </div>
+  </div>
+  <div class="p-col-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon" style="width: 170px">Monto documento</span>
+      <input type="number" pInputText placeholder="Solo numeros" style="width: 100%" formControlName="Monto">
+    </div>
+  </div>
+  <div class="p-col-12">
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon" style="width: 150px">Fecha documento </span>
+      <p-calendar [(ngModel)]="date2" [locale]="es" dateFormat="dd-mm-yy" [ngModelOptions]="{standalone: true}"></p-calendar>
+    </div>
+  </div>
+  <div class="p-col-12">
+    <p-button label="Visualizar Documento" (onClick)="solicitarPDF()"></p-button>
+  </div>
+</div>
+
+<pdf-viewer [src]="pdfSrc"
+            [render-text]="true"
+            style="display: block;">
+
+</pdf-viewer>
